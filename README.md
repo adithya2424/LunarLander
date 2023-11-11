@@ -1,5 +1,5 @@
 # LunarLander
-A simulation environment for lunar lander using SFML and C++
+A simulation environment for lunar lander using SFML, Box-2D in C++
 
 Experiment.cpp File contains the basic structure for visualzing the lunar lander environment.
 
