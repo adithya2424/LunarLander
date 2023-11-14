@@ -2,11 +2,14 @@
 #include "include/box2d/box2d.h"
 #include <iostream>
 #include "include/SFML/Audio.hpp"
+#include <cstdlib> 
+#include <ctime>
 
 
 class ContactListener : public b2ContactListener {
 public:
     bool collisionDetected = false;
+    
     void BeginContact(b2Contact* contact) override {
         // Check if the collision involves the lander legs and the terrain
         b2Fixture* fixtureA = contact->GetFixtureA();
@@ -22,10 +25,12 @@ public:
     }
 };
 
+
 class Lander {
 private:
     sf::RectangleShape base;
     b2Body* body;
+    
 
 public:
     Lander(b2World& world, float x, float y) {
@@ -62,7 +67,7 @@ public:
     }
 
 
-    void applyProjectedTrajectory(b2World& world, float timeStep) {
+    void applyProjectedTrajectory(b2World& world, float timeStep, int land_point,int range) {
       b2Vec2 position = body->GetPosition();
     float initialY = position.y;
     float initialX = position.x;
@@ -72,7 +77,8 @@ public:
     b2Vec2 finalPosition = position;
 
     // Simulate the trajectory for a certain time period without modifying the world
-    for (float t = 0; t <= 20.0; t += timeStep) {
+    
+    for (float t = 0; t <= range; t += timeStep) {
         // Vertical motion equation
         float projectedY = initialY + 20.0f * t - 0.5f * 1.62f * t * t;
 
@@ -257,6 +263,7 @@ int main() {
     sf::Sound sound;
     sound.setBuffer(buffer);
     bool isPaused = false;
+    int land_point = 0;
 
     b2Vec2 gravity(0.0f, 1.62f); // Moon's gravity (1.62 m/s^2 upwards)
     b2World world(gravity);
@@ -273,6 +280,10 @@ int main() {
     Flag rightFlag({{490.0f, 400.0f}, {490.0f, 420.0f}, {510.0f, 410.0f}}, sf::Color::Blue);
     FlagPole leftFlagPole(310.0f, 480.0f, 310.0f, 400.0f);
     FlagPole rightFlagPole(490.0f, 480.0f, 490.0f, 400.0f);
+    
+    srand(time(0));
+    int range = rand() % 25;
+    std::cout << range << std::endl;
 
     // In your main loop
     bool simulationRunning = true;
@@ -281,6 +292,7 @@ int main() {
     // Check if a collision was detected
     if (contactListener.collisionDetected) {
         std::cout << "Lander crashed!" << std::endl;
+
         // Add any logic or actions you want to perform when the lander crashes
 
         // Stop the simulation
@@ -370,9 +382,10 @@ int main() {
                     }
                 }
             }
-    
+    //land_point = rand(5, 10, 15, 20, 25);
     // Apply the sine wave trajectory to the lander
-    lander.applyProjectedTrajectory(world, 1.0f / 38000.0f);
+    
+    lander.applyProjectedTrajectory(world, 1.0f / 20000.0f,land_point,range);
 
     // Get the current lander position
     b2Vec2 landerPosition = lander.getBody()->GetPosition();
@@ -385,7 +398,7 @@ int main() {
 
     window.clear();
 
-    world.Step(1.0f / 88000.0f, 7, 7);
+    world.Step(1.0f / 20000.0f, 7, 7);
 
     lander.draw(window);
     leftLeg.draw(window);
