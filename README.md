@@ -1,6 +1,7 @@
 LunarLander:
 
-A simulation environment for lunar lander using SFML, Box-2D in C++ using Reinforcement Learning
+A simulation environment for lunar lander using SFML, Box-2D in C++ using Reinforcement Learning. The scripts under Experiments can be used to check the creation of the custom environment. 
+Main.cpp is the full immplementation of the training of Lunar Lander simulation in C++
 
 Instructions for Running main.cpp
 
