@@ -980,17 +980,9 @@ std::vector<float> dqn(int n_episodes = 1000, int max_t = 1000, float eps_start 
 
 int main()
 {
-    // Start measuring time
-    auto start_time = std::chrono::high_resolution_clock::now();
+   
     std::vector<float> scores = dqn(); // Run the DQN training process
-    // End measuring time
-    auto end_time = std::chrono::high_resolution_clock::now();
-    // Calculate the duration (time taken for training)
-    auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time);
-    // Print the time taken for training
-    std::cout << "Training time: " << duration.count() << " milliseconds" << std::endl;
 
-    return 0;
 
 }
 
