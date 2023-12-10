@@ -85,9 +85,9 @@ The Lander has below safety monitors:
    
    ![reset_system_moveright](https://github.com/adithya2424/LunarLander/assets/34277400/83fc62da-518f-484c-b525-95eddb1c7242)
 
+2. Collision detection down when there is a contact between terrain and the Lander
 
-
-
+![image](https://github.com/adithya2424/LunarLander/assets/45505887/abb6f234-5fed-40aa-84c4-be17ea757d11)
 
 
 
