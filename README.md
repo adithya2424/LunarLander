@@ -51,15 +51,15 @@ The shell script `compile_torch.sh` includes the compilation commands using `g++
 #! /bin/sh
 g++ -g -std=c++17 main.cpp -o main \
     -I include \
-    -I/Lunar_Lander_v2/libtorch/include \
-    -I/Lunar_Lander_v2/libtorch/include/torch/csrc/api/include \
+    -I/Lunar_Lander/libtorch/include \
+    -I/Lunar_Lander/libtorch/include/torch/csrc/api/include \
     -D_GLIBCXX_USE_CXX11_ABI=0 \
     -L lib \
-    -L/Lunar_Lander_v2/libtorch/lib/ \
+    -L/Lunar_Lander/libtorch/lib/ \
     -lsfml-system -lsfml-window -lsfml-graphics -lsfml-audio -lsfml-network -lbox2d -ltorch -lc10 -ltorch_cpu \
     -Wl,-rpath ./lib \
     -o output
 ```
 
-Please ensure that the paths mentioned in the script (`/Lunar_Lander_v2/libtorch/include`, `/Lunar_Lander_v2/libtorch/lib/`, etc.) match the actual paths on your system.
+Please ensure that the paths mentioned in the script (`/Lunar_Lander/libtorch/include`, `/Lunar_Lander/libtorch/lib/`, etc.) match the actual paths on your system.
 
