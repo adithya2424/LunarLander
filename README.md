@@ -6,7 +6,7 @@ Instructions for Running main.cpp
 
 This repository contains a shell script and C++ source file to compile the `main.cpp` file using g++ and required libraries.
 
-Prerequisites
+Prerequisites:
 
 Ensure you have the following installed:
 
@@ -15,7 +15,7 @@ SFML: Simple and Fast Multimedia Library.
 Box2D: A 2D physics engine.
 LibTorch: PyTorch's C++ library.
 
-Instructions
+Instructions:
 
 Follow these steps to compile and run the C++ code using the provided shell script:
 
