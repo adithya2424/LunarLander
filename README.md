@@ -64,3 +64,17 @@ g++ -g -std=c++17 main.cpp -o main \
 
 Please ensure that the paths mentioned in the script (`/Lunar_Lander/libtorch/include`, `/Lunar_Lander/libtorch/lib/`, etc.) match the actual paths on your system.
 
+The Lander has below safety monitors:
+
+1. Reset the System Upon Crossing the window border either Up, left, Right.
+
+   Visualization for Move Up Action:
+   
+   
+   https://github.com/adithya2424/LunarLander/assets/34277400/e183e91c-e887-426b-a1cc-959a6923b256
+
+
+
+
+
+
