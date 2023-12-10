@@ -71,7 +71,8 @@ The Lander has below safety monitors:
    Visualization for Move Up Action:
    
    
-   https://github.com/adithya2424/LunarLander/assets/34277400/e183e91c-e887-426b-a1cc-959a6923b256
+   ![reset_system_moveup](https://github.com/adithya2424/LunarLander/assets/34277400/7b544d87-a4a4-4495-bdbe-0a70d8d06f84)
+
 
 
 
