@@ -2,15 +2,7 @@ LunarLander:
 
 A simulation environment for lunar lander using SFML, Box-2D in C++
 
-Experiment.cpp File contains the basic structure for visualzing the lunar lander environment.
-
-Experiment2.cpp File contains the structure + physics simulating the free fall.
-
-Experiment3.cpp File contains the structure + physics + collision errors simulating the free fall
-
-Experiment4.cpp File cotains all of the above structure plus includes ground work for integrating RL algorithms
-
-Running main.cpp
+Instructions for Running main.cpp
 
 This repository contains a shell script and C++ source file to compile the `main.cpp` file using g++ and required libraries.
 
@@ -30,25 +22,25 @@ Follow these steps to compile and run the C++ code using the provided shell scri
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your_username/your_repository.git
+   git clone https://github.com/adithya2424/LunarLander.git
    ```
 
 2. Navigate to the directory:
 
    ```bash
-   cd your_repository
+   cd LunarLander
    ```
 
 3. Make the shell script executable:
 
    ```bash
-   chmod +x your_script.sh
+   chmod +x compile_torch.sh
    ```
 
 4. Run the shell script:
 
    ```bash
-   ./your_script.sh
+   ./compile_torch.sh
    ```
 
 Script Details
